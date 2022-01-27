@@ -12,8 +12,6 @@ const Home = () => {
         });
     }, []);
 
-    console.log(games);
-
     return (
         <div className="home">
             {games.map((game) => (
@@ -23,6 +21,8 @@ const Home = () => {
                     genres={game.genres}
                     image={game.image}
                     price={game.price}
+                    game={game}
+                    id={game.id}
                 />
             ))}
         </div>

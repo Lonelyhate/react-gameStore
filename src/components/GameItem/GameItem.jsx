@@ -1,8 +1,11 @@
 import React from 'react';
+import { useSelector } from 'react-redux';
 import { GameButton } from '../UI/GameButton';
 import './GameItem.scss';
 
-export const GameItem = ({ title, video, image, price, genres, description }) => {
+export const GameItem = ({ title, image, price, genres, game, id }) => {
+    const items = useSelector((state) => state.cart.itemsInCart);
+    const isItemInCart = items.some((item) => (item.id === id));
     return (
         <div className="game-item">
             <div className="game-item__image">
@@ -17,9 +20,11 @@ export const GameItem = ({ title, video, image, price, genres, description }) =>
                         </li>
                     ))}
                 </ul>
-                <div className='game-item__bottom'>
-                    <span className='game-item__price'>{price} руб.</span>
-                    <GameButton type={'primary'} onClick={() => console.log("кнопка")}>В корзину</GameButton>
+                <div className="game-item__bottom">
+                    <span className="game-item__price">{price} руб.</span>
+                    <GameButton isItems={isItemInCart} type={!isItemInCart ? 'primary' : 'secondary'} game={game}>
+                        {!isItemInCart ? 'Добавить в корзину' : 'Убрать из корзины'}
+                    </GameButton>
                 </div>
             </div>
         </div>

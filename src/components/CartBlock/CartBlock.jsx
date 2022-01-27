@@ -1,12 +1,23 @@
 import React from 'react';
 import './CartBlock.scss';
-import { BiCartAlt } from 'react-icons/bi';
+import { BiCaptions, BiCartAlt } from 'react-icons/bi';
+import { useSelector } from 'react-redux';
+import CartMenu from '../CartMenu/CartMenu';
 
 const CartBlock = () => {
+    const [isCartVisable, setIsCartVisable] = React.useState(false);
+    const { itemsSum, itemsInCart } = useSelector(({ cart }) => cart);
+
     return (
         <div className="cart">
-            <BiCartAlt size={25} className='cart__icon'/>
-            <span className='cart__total-price'>2333 руб.</span>
+            <BiCartAlt
+                onClick={() => setIsCartVisable(!isCartVisable)}
+                size={25}
+                className="cart__icon"
+            />
+            <span className='cart__count'>{itemsInCart.length}</span>
+            <span className="cart__total-price">{itemsSum} руб.</span>
+            {isCartVisable && <CartMenu />}
         </div>
     );
 };

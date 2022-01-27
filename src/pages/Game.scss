@@ -1,0 +1,30 @@
+.game-page{
+    h1{
+        margin-bottom: 20px;
+    }
+    img{
+        display: block;
+        width: 100%;
+        margin-bottom: 20px;
+    }
+    &__content{
+        display: flex;
+    }
+    &__left{
+        width: 70%;
+    }
+    &__right{
+        width: 30%;
+    }
+    &__descr{
+        margin-bottom: 20px;
+    }
+    &__buy-game{
+        display: flex;
+        justify-content: flex-end;
+        margin-top: 20px;
+    }
+    .secondary-text{
+        margin-bottom: 10px;
+    }
+}

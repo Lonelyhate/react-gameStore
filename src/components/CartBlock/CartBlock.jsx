@@ -8,6 +8,11 @@ const CartBlock = () => {
     const [isCartVisable, setIsCartVisable] = React.useState(false);
     const { itemsSum, itemsInCart } = useSelector(({ cart }) => cart);
 
+
+    const handleClick = () => {
+
+    }
+
     return (
         <div className="cart">
             <BiCartAlt
@@ -17,7 +22,7 @@ const CartBlock = () => {
             />
             <span className='cart__count'>{itemsInCart.length}</span>
             <span className="cart__total-price">{itemsSum} руб.</span>
-            {isCartVisable && <CartMenu />}
+            {isCartVisable && <CartMenu setIsCartVisable={setIsCartVisable}/>}
         </div>
     );
 };

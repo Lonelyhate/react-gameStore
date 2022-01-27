@@ -1,0 +1,15 @@
+.game-item{
+    &__genres{
+        display: flex;
+        flex-wrap: wrap;
+    }
+    &__gengre{
+        font-size: 14px;
+        background-color: gray;
+        padding: 5px;
+        border-radius: 10px;
+        &:not(:last-child){
+            margin-right: 10px;
+        }
+    }
+}

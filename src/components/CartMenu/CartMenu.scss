@@ -17,4 +17,13 @@
         align-items: center;
         margin-bottom: 20px;
     }
+    &__order-btn{
+        width: 150px;
+        padding: 10px 0;
+        border-radius: 20px;
+        background-color: darkblue;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
 }

@@ -9,20 +9,9 @@
         font-size: 22px;
         font-weight: 700;
         margin-bottom: 10px;
+        cursor: pointer;
     }
-    &__genres{
-        display: flex;
-        flex-wrap: wrap;
-    }
-    &__gengre{
-        font-size: 14px;
-        background-color: gray;
-        padding: 5px;
-        border-radius: 10px;
-        &:not(:last-child){
-            margin-right: 10px;
-        }
-    }
+    
     &__details{
         padding: 10px 20px;
     }
@@ -40,10 +29,16 @@
     &__image{
         height: 170px;
         width: 100%;
+        cursor: pointer;
+        overflow: hidden;
         img{
             display: block;
             height: 100%;
             width: 100%;
+            transition: transform 0.3s ease;
+            &:hover{
+                transform: scale(1.1);
+            }
         }
     }
     &__price{

@@ -3,9 +3,9 @@ import './CartMenu.scss';
 import { GameButton } from '../UI/GameButton';
 import { useDispatch, useSelector } from 'react-redux';
 import CartItem from '../CartItem/CartItem';
+import { Link } from 'react-router-dom';
 
-const CartMenu = () => {
-    const dispatch = useDispatch();
+const CartMenu = ( {setIsCartVisable} ) => {
     const { itemsInCart, itemsSum } = useSelector(({ cart }) => cart);
 
     return (
@@ -28,9 +28,9 @@ const CartMenu = () => {
                         <span>Итого:</span>
                         <span>{itemsSum} руб.</span>
                     </div>
-                    <GameButton type="primary" size="m">
-                        Офорить заказ
-                    </GameButton>
+                    <Link to="/app/order">
+                        <span onClick={() => setIsCartVisable(false)} className='cart-menu__order-btn'>Оформить заказ</span>
+                    </Link>
                 </div>
             )}
         </div>

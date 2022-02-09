@@ -1,1 +1,1 @@
-Реализация сайта - 
+Стек - React, scss, react-router-dom, redux-toolkit
